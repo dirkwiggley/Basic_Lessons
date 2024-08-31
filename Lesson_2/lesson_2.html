@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      var minName = ""
+      function storeMinion(selectObject) {
+        minName = selectObject.value
+        getMinName()
+      }
+
+      function getMinName() {
+        let themsg = document.getElementById("minions_select").value;
+        if (themsg){
+          document.getElementById("minionNameInput").value = themsg;
+        }
+        else{
+          document.getElementById("minionNameInput").value = "No name set";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <img src="./Minions_characters.png" />
+    </div>
+    
+    <div>
+      Hello World
+    </div>
+
+    <div style="width: 100%;">
+      <label for="minions">Choose a minion:</label>
+      <select name="minions" id="minions_select" onchange={storeMinion(this)}>
+        <option value="tom">Tom</option>
+        <option value="dick">Dick</option>
+        <option value="harry">Harry</option>
+      </select>
+    </div>
+    <div>
+      <input id="minionNameInput" enabled="false"/>
+    </div>
+    <div>
+      <a href="./page2.html">Page 2</a>
+    </div>
+  </body>
+</html>

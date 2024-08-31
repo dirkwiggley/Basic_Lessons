@@ -1,0 +1,52 @@
+<h2>About CSS</h2>
+<p>CSS stands for Cascading Style Sheets. The Cascading part refers to the fact that css elements are attached to HTML tags and every HTML from that tag and all of it's children will have the same css attached to them by default. The simplest way to 'turn off' css in a child HTML element is to give that element css settings of it's own.</p>
+<p>A good resource for CSS is <a href="https://www.w3schools.com/css/css_intro.asp">W3 Schools</a>.</p>
+<p>A few things to consider about CSS:
+  <ul>
+    <li>CSS no longer just a style tool. It has some very powerful features that you can use. Browsing <a href="https://www.youtube.com/">YouTube</a> is a good way to find and make use of some of these.</li>
+    <li>There are <a href="https://www.w3schools.com/css/css_howto.asp">three common ways</a> to add css styles to a document
+      <ol>
+        <li>
+          Inline Style - example: <p><span style="font-weight: bold;">&lt;p style="color:red;"&gt;This is a paragraph.&lt;/p&gt;</span></p> produces this: <p style="color:red;">This is a paragraph</p> 
+        </li>
+        <li>External style - In this case you create a separate css file that you include in your html. You then add that styling to your tags using the <span style="font-weight: bold;">class</span> attribute. It looks like this<p>In a new file (i.e. mystyle.css)</p><pre>
+        h1 {
+          margin: 0px;
+          padding: 1em;
+        }
+        
+        .myFooter {
+          position: fixed;
+          bottom: 0;
+          background-color: #F1F1F1;
+          min-width: 100%;
+          padding-left: 15px;
+        }</pre><p>In a css file with that, any h1 tag will automatically have a margin of 0 pixels and padding of 1em. Also any tag that you give the class="footerClass" attribute to will have the styles listed above. You would use that like this:</li></p>
+        <pre>
+          &lt;head&gt;
+            &lt;link rel="stylesheet" href="mystyle.css"&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;footer class="myFooter"&gt;stuff in footer&lt;/footer&gt;
+          &lt;/body&gt;
+        </pre></li>
+        <li>Internal style is where you put the contents of a stylesheet inside the file with the HTML that uses it. It looks like this:
+        <pre>
+          &lt;head&gt;
+          &lt;style&gt;
+            body {
+              background-color: linen;
+            }
+            
+            h1 {
+              color: maroon;
+              margin-left: 40px;
+            }
+          &lt;/style&gt;
+          &lt;/head&gt;
+        </pre><p>And it is used in exactly the same way in your HTML tags as in the External Style example above.</p></li>
+      </ol>
+    </li>
+  </ul> 
+  The previous list is intended to just suggest a starting point for studies into css. Any basic css tutorial will cover them in much more detail.
+</p>

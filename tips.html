@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic HTML, CSS, & JavaScript</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./lessons.css">
+</head>
+<body onload="loadHeader()">
+  <header class="header">
+    <h1>Some HTML, CSS, & JavaScript</h1>
+    <nav class="topnav">
+      <a href="./index.html">Introduction</a>
+      <a href="./lessons.html">Lessons</a>
+      <a href="./tips.html">Tips</a>
+    </nav>
+  </header>
+
+  <div style="padding-left: 10px; padding-right: 10px;">
+    <h2>Tips</h2>
+  </div>
+
+  <div class="row">
+    <div class="column-left" style="padding-left: 10px;">
+      <label for="items" style="font-weight: bold;">Items</label>
+      <ul id="items" style="margin-top: 0px;">
+        <li>
+          <button class="link-btn" onclick="setFragment('recommendations')">Recommendations (things to get)</button>
+        </li>
+        <li>
+          <button class="link-btn" onclick="setFragment('about-browsers')">About Browsers</button>
+        </li>
+        <li>
+          <button class="link-btn" onclick="setFragment('about-html')">About HTML</button>
+        </li>
+        <li>
+          <button class="link-btn" onclick="setFragment('about-css')">About CSS</button>
+        </li>
+        <li>
+          <button class="link-btn" onclick="setFragment('about-javascript')">About JavaScript</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column-right" id="fragmentDiv" style="padding-left: 10px; padding-right: 10px;"></div>
+  </div>
+
+  <footer class="footerClass">
+    <span>for Sam</span>
+  </footer>
+  
+  <script>
+    function setFragment(fragmentName) {
+      let fragmentDiv = document.getElementById('fragmentDiv')
+      fragmentDiv.innerHTML=''
+      let fragment = document.createElement("object")
+      fragment.type="text/html"
+      fragment.style="width: 100%;min-height: 80vh;"
+      switch (fragmentName) {
+        case "recommendations":
+          fragment.data="./tips/recommendations.html"
+          break
+        case "about-browsers":
+          fragment.data="./tips/about_browsers.html"
+          break
+        case "about-html":
+          fragment.data="./tips/about_html.html"
+          break
+        case "about-css":
+          fragment.data="./tips/about_css.html"
+          break
+        case "about-javascript":
+          fragment.data="./tips/about_javascript.html"
+          break
+        default:
+          alert("Invalid Selection")
+      }
+      fragmentDiv.appendChild(fragment)
+    }
+  </script>
+</body>
+</html>

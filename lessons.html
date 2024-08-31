@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic HTML, CSS, & JavaScript</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./lessons.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Some HTML, CSS, & JavaScript</h1>
+    <nav class="topnav">
+      <a href="./index.html">Introduction</a>
+      <a href="./lessons.html">Lessons</a>
+      <a href="./tips.html">Tips</a>
+    </nav>
+  </header>
+
+  <div style="padding-left: 10px; padding-right: 10px;">
+    <h2>Lessons</h2>
+  </div>
+
+  <div class="row">
+    <div class="column-left" style="padding-left: 10px;">
+      <label for="items" style="font-weight: bold;">Items</label>
+      <ul id="items" style="margin-top: 0px;">
+        <li>
+          <button class="link-btn" onclick="setFragment('lesson_1')">Lesson 1</button>
+        </li>
+        <li>
+          <button class="link-btn" onclick="setFragment('lesson_2')">Lesson 2</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column-right" id="fragmentDiv" style="padding-left: 10px; padding-right: 10px;"></div>
+  </div>
+
+  <footer class="footerClass">
+    <span>for Sam</span>
+  </footer>
+
+  <script>
+    function setFragment(fragmentName) {
+      let fragmentDiv = document.getElementById('fragmentDiv')
+      fragmentDiv.innerHTML=''
+      let fragment = document.createElement("object")
+      fragment.type="text/html"
+      fragment.style="width: 100%;min-height: 80vh;"
+      switch (fragmentName) {
+        case "lesson_1":
+          fragment.data="./Lesson_1/lesson_1.html"
+          fragmentDiv.appendChild(fragment)
+          break;
+        case "lesson_2":
+          fragment.data="./Lesson_2/lesson_2.html"
+          fragmentDiv.appendChild(fragment)
+          break;
+        default:
+          alert("Invalid Selection")
+      }
+    }
+  </script>
+</body>
+</html>

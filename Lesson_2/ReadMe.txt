@@ -1,0 +1,1 @@
+To start lesson 1 launch VSCode and on the menu bar File => Open Folder => <This directory>

@@ -1,0 +1,49 @@
+/* Left and right column */
+.column-left {
+  float: left;
+  width: 25%;
+  min-height: 100%;
+}
+
+/* Middle column */
+.column-right {
+  float: left;
+  width: 75%;
+  min-height: 100%;
+}
+
+.row {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+
+.link-btn {
+  display: inline;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  background: transparent;
+  color: currentColor;
+
+  -webkit-appearance: none;
+}
+
+.link-btn:hover {
+  color: purple;
+}
