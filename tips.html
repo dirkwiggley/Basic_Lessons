@@ -6,6 +6,7 @@
   <title>Basic HTML, CSS, & JavaScript</title>
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./lessons.css">
+  <link rel="import" href="./Tips/about_browsers.html">
 </head>
 <body>
   <header class="header">
@@ -43,7 +44,143 @@
       </ul>
     </div>
 
-    <div class="column-right" id="fragmentDiv" style="padding-left: 10px; padding-right: 10px;"></div>
+    <div class="column-right" id="fragmentDiv" style="padding-left: 10px; padding-right: 10px;">
+      <span id="recommendations" style="display: none; width: 100%; min-height: 80vh;">
+        <h2>Recommendations</h2>
+        <ul>
+          <li>If you look at the code for this site, don't get discouraged. There's a lot of formatting and JavaScript I put in to make the site usable. The code of the site is not intended to be the tutorial themselves. Do feel free to look and ask questions though.</li>
+          <li>Look at the code from other sites using your browser. Press <span style="font-weight: bold">&lt;CNTRL + SHIFT&gt; + i</span> to open the developer tools panel and look at the code there under the <span style="font-style: italic">Sources tab</span> . You can see network calls it makes under the <span style="font-style: italic">Network tab</span>, find HTML elements in a crowded page using the <span style="font-style: italic">Elements tab</span>, and see error messages and developer output under the <span style="font-style: italic">Console tab</span>.</li>
+          <li>Download and use <a href="https://code.visualstudio.com/">VSCode</a> as your IDE (Integrated Development Evironment). You can use anything you want really (I started learning using the VI editor and a browser) but VSCode is widely used and has a plethora of plugins that can make your life significantly easier.</a></li>
+          <li>Pick a browser to test on that is highly used but don't get religious about it. Different browsers <span style="font-style: italic">will behave differently</span> from time to time. It will frustrate the heck out of you but press on.</span></li>
+          <li>Create a <a href="https://github.com/">GitHub account</a></li>
+          <li>Create a <a href="https://vercel.com/">Vercel account</a></li>
+          <li>Create a <a href="https://codesandbox.io/">CodeSandbox account</a></li>
+          <li>Search on YouTube for various coding topics. Subscribe to channels you like.</li>
+        </ul>
+        With these bits you can do things like:
+        <ul>
+          <li> Use it:
+            <ol>
+              <li>Create and test a website in your IDE and browser.</li>
+              <li>Upload your project to GitHub.</li>
+              <li>Deploy your project to Vercel (for free!) to allow others to use it.</li>
+            </ol>
+          </li>
+          <li> Show off your skills:
+            <ol>
+              <li>Create and test a website in your IDE and browser.</li>
+              <li>Upload your project to GitHub.</li>
+              <li>Deploy your project to CodeSandbox (also for free!) to demo it in realtime online with others.</li>
+            </ol>
+          </li>
+        </ul>
+      </span>
+      <span id="about-browsers" style="display: none; width: 100%; min-height: 80vh;">
+        <h2>About Browsers</h2>
+        <p>
+          The simplest explanation of browsers are that they are applications that allows users to interact with data based on said data and embedded instructions that explain how various UI elements are supposed to work within the context of that data. A more complex description of browsers are that in general a browser consists of the following parts:
+          <ul>
+            <li>User Interface</li>
+            <li>Browser Engine</li>
+            <li>Data Persistence</li>
+            <li>Rendering Engine</li>
+            <li>Networking Component(s)</li>
+            <li>JavaScript Interpreter</li>
+            <li>UI Backend</li>
+          </ul>
+          Taken in total, a browser is an application that allows more or less complicated interaction with requested data based on the structure of that data. Here is an article that goes into slightly more depth on <a href="https://dev.to/itswillt/the-components-of-a-browser-23mn">the components of a browser</a>
+        </p>
+        <p>
+          You can see what is happening behind the scenes in a browser when it has a document opened by pressing &lt;Ctrl+Shift+i&gt; (give it a try now). This is the developer tool window. There is a wealth of information available here for you to use. Using the Chrome browser as a reference, you shoud see something like this:</p>
+        <img src="./developer_tools.png" style="  width: 800px; object-fit: cover;"/>
+        <p>Here's a rundown on some of the tabs:</p>
+        <ul>
+          <li>Elements - Shows you an HTML interpretation of the page side by side with the rendered page so you can locate the rendered element by hovering over the HTML</li>
+          <li>Console - Displays important data output by some part of the browser (i.e. error messages) or output created by the page author (via a console.log, console.error, or some other mechanism)</li>
+          <li>Sources - You can view the HTML and JavaScript of a page here and put breakpoints in the JavaScript to assist with debugging your code.</li>
+          <li>Network - You can see all of the network calls into and out of your browser along with all relevant data, headers, etc that are being made in real time alongside the rendered data.</li>
+        </ul>
+        <p>There are other tabs but the ones I've listed are the ones you will use most often.</p>
+        <p>To get some idea of what a browser is doing try this: Enter a the location of a directory and not a file into the address bar. Browse around your filesystem. Click on different file types and see how (or if) your browser displays it.</p>
+      </span>
+      <span id="about-html" style="display: none; width: 100%; min-height: 80vh;">
+        <h2>About HTML</h2>
+        <p>HTML is the markup language most used to create web pages. They are typically stored on servers and sent to clients (i.e. browsers) who request them via the HTTP protocol, though you can also view an html document by 'requesting' a local file in your browser in it's address field.</p>
+        <p>The easiest way to see the most basic, required parts of a complete HTML document are to generate one from a template in VSCode. To do this, create a new file with a .html extension in a VSCode project. Open the new, blank file and press the ! key and &lt;Enter&gt; and it will create a boilerplate HTML page for you:</p>
+        <img src="./boilerplate_html.png" style="  width: 800px; object-fit: cover;"/>
+        <p>There is a lot to say about HTML and how to use it. I'll just mention a (very) few here and leave the rest up to you to research as you need.</p>
+        <ul>
+          <li><a href="https://www.w3schools.com/TAGS/default.asp">W3 Schools</a> is a good reference for HTML tags.</li>
+          <li>All HTML tags in a document are nested in another tab, sometimes several levels deep. The only exceptions to this are the !Document tag and the html tab (which is the root of the document).</li>
+          <li><i>Most</i> HTML tags require a closing tag (i.e. &lt;a href="google.com"&gt;Google<b>&lt;/a&gt;</b>.</li>
+          <li>The tags you will always use are the ones generated by the template mentioned above: !Doctype, html, head, and body</li>
+          <li>The tags that you will use most to gather data include: input and button.</li>
+          <li>The tags that you will use most to format text and other data on a page include: p, div, and span</li>
+          <li>Images are added to a document via the img tag. Video and other media are a bit advanced. I recommend you look those up after you've familiarized yourself with some of the other elements I've listed here.</li>
+          <li>Tags can have several optional parameters (i.e. input tags frequently make use of the id and value parameters, button tags are useless without an onclick parameter).</li>
+        </ul>        
+      </span>
+      <span id="about-css" style="display: none; width: 100%; min-height: 80vh;">
+        <h2>About CSS</h2>
+        <p>CSS stands for Cascading Style Sheets. The Cascading part refers to the fact that css elements are attached to HTML tags and every HTML from that tag and all of it's children will have the same css attached to them by default. The simplest way to 'turn off' css in a child HTML element is to give that element css settings of it's own.</p>
+        <p>A good resource for CSS is <a href="https://www.w3schools.com/css/css_intro.asp">W3 Schools</a>.</p>
+        <p>A few things to consider about CSS:
+          <ul>
+            <li>CSS no longer just a style tool. It has some very powerful features that you can use. Browsing <a href="https://www.youtube.com/">YouTube</a> is a good way to find and make use of some of these.</li>
+            <li>There are <a href="https://www.w3schools.com/css/css_howto.asp">three common ways</a> to add css styles to a document
+              <ol>
+                <li>
+                  Inline Style - example: <p><span style="font-weight: bold;">&lt;p style="color:red;"&gt;This is a paragraph.&lt;/p&gt;</span></p> produces this: <p style="color:red;">This is a paragraph</p> 
+                </li>
+                <li>External style - In this case you create a separate css file that you include in your html. You then add that styling to your tags using the <span style="font-weight: bold;">class</span> attribute. It looks like this<p>In a new file (i.e. mystyle.css)</p><pre>
+                h1 {
+                  margin: 0px;
+                  padding: 1em;
+                }
+                
+                .myFooter {
+                  position: fixed;
+                  bottom: 0;
+                  background-color: #F1F1F1;
+                  min-width: 100%;
+                  padding-left: 15px;
+                }</pre><p>In a css file with that, any h1 tag will automatically have a margin of 0 pixels and padding of 1em. Also any tag that you give the class="footerClass" attribute to will have the styles listed above. You would use that like this:</li></p>
+                <pre>
+                  &lt;head&gt;
+                    &lt;link rel="stylesheet" href="mystyle.css"&gt;
+                  &lt;/head&gt;
+                  &lt;body&gt;
+                    &lt;footer class="myFooter"&gt;stuff in footer&lt;/footer&gt;
+                  &lt;/body&gt;
+                </pre></li>
+                <li>Internal style is where you put the contents of a stylesheet inside the file with the HTML that uses it. It looks like this:
+                <pre>
+                  &lt;head&gt;
+                  &lt;style&gt;
+                    body {
+                      background-color: linen;
+                    }
+                    
+                    h1 {
+                      color: maroon;
+                      margin-left: 40px;
+                    }
+                  &lt;/style&gt;
+                  &lt;/head&gt;
+                </pre><p>And it is used in exactly the same way in your HTML tags as in the External Style example above.</p></li>
+              </ol>
+            </li>
+          </ul> 
+          The previous list is intended to just suggest a starting point for studies into css. Any basic css tutorial will cover them in much more detail.
+        </p>        
+      </span>
+      <span id="about-javascript" style="display: none; width: 100%; min-height: 80vh;">
+        <h2>About JavaScript</h2>
+        <p>JavaScript is front (client side) and back end (server side) language that is ubiquitous and pretty much disliked by everyone who has experince with it and is being honest with themselves. In my opionion it has reached the stage of evolution where it's complexity coupled with an overwhelming array of libraries are starting to make people select other options for interactivity in web pages. That said, it is deeply embedded in so many places that wholesale removal of it is impractical and a huge number of developers know the language making it an attractive choice for companies looking for a large talent pool. So it ain't goin' anywhere soon (keep an eye on PHP though). Turning away from JavaScript will take a long time (thus, it's still a good skill to pick up and use).</p>
+        <p>The language can be run in the front-end (client side) in browsers or on the back end (server side) under NodeJS (most popular), Deno, Next.js, Meteor and a few other environments. Initially, I would recommend focusing your studies on front-end JavaScript and not dive into any back end work until you have a good command of the language. After getting very aquainted with JavaScript, it would be a good idea to eventually step up to use TypeScript instead of JavaScript. Stated simply, TypeScript is JavaScript with syntax for types. JavaScript <span style="font-style: italic">is TypeScript</span>. You can change the file extension of a JavaScript file, .js, to the extension of a TypeScript file, .ts, and all or most of your JavaScript file should work fine. Some of the 'features' of JavaScript that cost you hours of debugging will be remediated by using TypeScript insted. However you must know JavaScript pretty well in order to understand what TypeScript is doing or it will throw exceptions at you that you will never be able to work out. So study JavaScript, get good, move on to TypeScript.</p>
+        <p>You can either embed JavaScript in an HTML file or import it into an HTML from it's own native JavaScript file. You can run JavaScript commands directly in a browser to check and see how they work (pretty cool actually). There is so much to say about JavaScript that I'll leave it up to you to find good tutorials on them.</p>
+      </span>
+    </div>
   </div>
 
   <footer class="footerClass">
@@ -52,31 +189,37 @@
   
   <script>
     function setFragment(fragmentName) {
-      let fragmentDiv = document.getElementById('fragmentDiv')
-      fragmentDiv.innerHTML=''
-      let fragment = document.createElement("object")
-      fragment.type="text/html"
-      fragment.style="width: 100%;min-height: 80vh;"
+      let recommendations = document.getElementById("recommendations")
+      let aboutBrowsers = document.getElementById("about-browsers")
+      let aboutHtml = document.getElementById("about-html")
+      let aboutCss = document.getElementById("about-css")
+      let aboutJavascript = document.getElementById("about-javascript")
+
+      recommendations.style.display="none"
+      aboutBrowsers.style.display="none"
+      aboutHtml.style.display="none"
+      aboutCss.style.display="none"
+      aboutJavascript.style.display="none"
+
       switch (fragmentName) {
         case "recommendations":
-          fragment.data="./tips/recommendations.html"
+          recommendations.style.display=""
           break
         case "about-browsers":
-          fragment.data="./tips/about_browsers.html"
+          aboutBrowsers.style.display=""
           break
         case "about-html":
-          fragment.data="./tips/about_html.html"
+          aboutHtml.style.display=""
           break
         case "about-css":
-          fragment.data="./tips/about_css.html"
+          aboutCss.style.display=""
           break
         case "about-javascript":
-          fragment.data="./tips/about_javascript.html"
+          aboutJavascript.style.display=""
           break
         default:
           alert("Invalid Selection")
       }
-      fragmentDiv.appendChild(fragment)
     }
   </script>
 </body>
