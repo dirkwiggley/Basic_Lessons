@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./lessons.css">
 </head>
-<body onload="loadHeader()">
+<body>
   <header class="header">
     <h1>Some HTML, CSS, & JavaScript</h1>
     <nav class="topnav">
@@ -52,6 +52,8 @@
   
   <script>
     function setFragment(fragmentName) {
+      getExternalHTML()
+
       let fragmentDiv = document.getElementById('fragmentDiv')
       fragmentDiv.innerHTML=''
       let fragment = document.createElement("object")
